@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.24.4)
-project(HUMMINGBIRD_PLUGIN_TEMPLATE)
+project(HUMMINGBIRD_PLUGIN_SYSINFO)
 set(CMAKE_CXX_STANDARD 23)
 
 set(PLUGIN_NAME ${CMAKE_PROJECT_NAME})
@@ -13,9 +13,10 @@ endif ()
 message(STATUS "HUMMINGBIRD_PLUGIN_MANAGER_DIR: ${PROJECT_DIR}")
 
 add_library(${PLUGIN_NAME} SHARED
-        PluginTemplate/src/PluginTemplate.cpp
-        PluginTemplate/src/PluginTemplate.h
-        PluginTemplate/src/PluginTemplateWindow.h
+        PluginSysInfo/src/PluginSysInfo.cpp
+        PluginSysInfo/src/PluginSysInfo.h
+        PluginSysInfo/src/UI/PluginSysInfoWindow.h
+        PluginSysInfo/src/UI/PluginSysInfoWindow.cpp
 )
 
 if(NOT TARGET imgui-extension)
