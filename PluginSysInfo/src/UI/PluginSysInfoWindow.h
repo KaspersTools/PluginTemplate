@@ -9,11 +9,13 @@
 #include "HBUI/WindowManager.h"
 
 namespace Plugin::SysInfo {
-	class Window : public HummingBirdCore::UIWindow {
-	public:
-		Window() : UIWindow("Plugin SysInfo"){}
-		void render() override;
-	private:
-	};
-}
+  class Window : public HummingBirdCore::UIWindow {
+public:
+    Window() : UIWindow("Plugin SysInfo") {}
+    void render() override;
 
+private:
+    void showMemoryInfo();
+    void showCpuInfo();
+  };
+}// namespace Plugin::SysInfo

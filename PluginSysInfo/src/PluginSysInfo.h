@@ -8,26 +8,29 @@
 #include <HBUI/HBUI.h>
 
 namespace Plugin::SysInfo {
-	class EntryPoint : public HummingBird::Plugins::IPlugin {
-	public:
-	public:
-		EntryPoint(HummingBirdCore::UI::WindowManager *windowManagerPtr, ImGuiContext *imGuiContext,
-				   ImGuiMemAllocFunc allocFunc, ImGuiMemFreeFunc freeFunc, void *userData) : IPlugin(
-				windowManagerPtr, imGuiContext, allocFunc, freeFunc, userData) {
-		}
+  class EntryPoint : public HummingBird::Plugins::IPlugin {
 
-		void initialize() override;
+public:
+    EntryPoint(HummingBirdCore::UI::WindowManager *windowManagerPtr, ImGuiContext *imGuiContext,
+               ImGuiMemAllocFunc allocFunc, ImGuiMemFreeFunc freeFunc, void *userData)
+        : IPlugin(windowManagerPtr, imGuiContext, allocFunc, freeFunc, userData) {
+    }
 
-		void update() override;
+    void initialize() override;
 
-		void cleanup() override;
+    void update() override;
 
-	};
-}
+    void cleanup() override;
+
+private:
+    inline static float s_lastTime = 0.0f;
+    inline static float s_currentTime = 0.0f;
+  };
+}// namespace Plugin::SysInfo
 
 
 extern "C" HummingBird::Plugins::IPlugin *create_plugin(
-		HummingBirdCore::UI::WindowManager *windowManagerPtr, ImGuiContext *imGuiContext,
-		ImGuiMemAllocFunc allocFunc, ImGuiMemFreeFunc freeFunc, void *userData) {
-	return new Plugin::SysInfo::EntryPoint(windowManagerPtr, imGuiContext, allocFunc, freeFunc, userData);
+        HummingBirdCore::UI::WindowManager *windowManagerPtr, ImGuiContext *imGuiContext,
+        ImGuiMemAllocFunc allocFunc, ImGuiMemFreeFunc freeFunc, void *userData) {
+  return new Plugin::SysInfo::EntryPoint(windowManagerPtr, imGuiContext, allocFunc, freeFunc, userData);
 }
