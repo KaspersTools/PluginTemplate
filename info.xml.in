@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+    <name>@PLUGIN_NAME@</name>
+    <version>@PLUGIN_VERSION@</version>
+    <description>
+        @PLUGIN_DESCRIPTION@
+    </description>
+    <author>
+        <name>@AUTHOR_NAME@</name>
+        <email>@AUTHOR_EMAIL@</email>
+        <website>@AUTHOR_WEBSITE@</website>
+    </author>
+</plugin>
