@@ -4,6 +4,7 @@ add_library(${PLUGIN_NAME} SHARED
         ${PROJECT_SOURCE_DIR}/PluginTemplate/src/PluginTemplateWindow.h
 )
 
+
 if(TARGET imgui-extension)
     target_link_libraries(${PLUGIN_NAME} PUBLIC imgui-extension)
 else()
