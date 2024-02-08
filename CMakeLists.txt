@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.24.4)
 project(HUMMINGBIRD_PLUGIN_BASE)
 set(CMAKE_CXX_STANDARD 23)
-
+#TEST TEXT FOR WORKFLOW TEST
 if (NOT TARGET imgui-extension)
     message(STATUS "imgui-extension not included, including it now")
     set(IMGUI_EXAMPLES OFF CACHE BOOL "" FORCE)
