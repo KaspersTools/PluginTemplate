@@ -1,6 +1,6 @@
 name: template-sync
 
-on: [push, pull_request, workflow_dispatch]
+on: [workflow_dispatch]
 
 jobs:
   template-sync:
@@ -11,4 +11,4 @@ jobs:
       - uses: euphoricsystems/action-sync-template-repository@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          dry-run: true
+          dry-run: false
