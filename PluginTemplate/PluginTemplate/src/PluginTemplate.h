@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "../include/IPlugin.h"
-#include <HBUI/HBUI.h>
+#include "HBUI/HBUI.h"
+#include "IPlugin.h"
 
 class PluginTemplate : public HummingBird::Plugins::IPlugin {
 public:

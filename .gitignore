@@ -1,2 +1,4 @@
 @OUT
-/cmake-build-debug
+PluginTemplate/cmake-build-debug/
+/build/
+/cmake-build-debug/

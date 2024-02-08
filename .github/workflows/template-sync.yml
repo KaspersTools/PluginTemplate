@@ -5,7 +5,7 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   template-sync:
     runs-on: ubuntu-latest
-
+    if: github.repository != 'KaspersTools/PluginTemplate' # Skip syncing if the repository is the template itself
     steps:
       - uses: actions/checkout@v3
       - uses: euphoricsystems/action-sync-template-repository@v2

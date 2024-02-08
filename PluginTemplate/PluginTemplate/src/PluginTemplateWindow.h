@@ -4,9 +4,9 @@
 
 #pragma once
 
-#include <HBUI/HBUI.h>
-#include <HBUI/UIWindow.h>
-#include <HBUI/WindowManager.h>
+#include "HBUI/HBUI.h"
+#include "HBUI/UIWindow.h"
+#include "HBUI/WindowManager.h"
 
 class PluginTemplateWindow : public HummingBirdCore::UIWindow {
   public:
