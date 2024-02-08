@@ -1,14 +1,28 @@
-name: template-sync
-
-on: [workflow_dispatch]
-
+# File: .github/workflows/template-sync.yml
+on:
+  # cronjob trigger
+  schedule:
+    - cron: "0 0 1 * *"
+  # manual trigger
+  workflow_dispatch:
 jobs:
-  template-sync:
+  repo-sync:
     runs-on: ubuntu-latest
-    if: github.repository != 'KaspersTools/PluginTemplate' # Skip syncing if the repository is the template itself
+    # https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: euphoricsystems/action-sync-template-repository@v2
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          dry-run: false
+          submodules: true
+
+      - name: actions-template-sync
+        uses: AndreasAugustin/actions-template-sync@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_repo_path: KaspersTools/PluginTemplate
+          upstream_branch: main
+          pr_labels: "template-sync"
