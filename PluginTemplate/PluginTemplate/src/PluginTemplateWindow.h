@@ -14,14 +14,16 @@ class PluginTemplateWindow : public HummingBirdCore::UIWindow {
   }
 
   void render() override {
-    ImGui::Text("This is the plugin exsmple window");
-	//todo: add stdlib
-//    ImGui::InputText("Plugin Name", &inputTest)
-	ImGui::InputText("Plugin Name", inputTest, IM_ARRAYSIZE(inputTest));
-    ImGui::Button("test button");
+    ImGui::Text("This is the plugin example window");
+
+    ImGui::InputText("Plugin Name", inputTest, IM_ARRAYSIZE(inputTest));
+    ImGui::ColorPicker4("Color Picker", &clear_color.x);
+
+    ImGui::Button("test button1");
+    ImGui::Button("test button3");
   }
 
   private:
-	char inputTest[128] = "Hello, world!";
+  char inputTest[128] = "Hello, world!";
+  ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 };
-

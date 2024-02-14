@@ -5,10 +5,10 @@ add_library(${PLUGIN_NAME} SHARED
 )
 
 
-if(TARGET imgui-extension)
-    target_link_libraries(${PLUGIN_NAME} PUBLIC imgui-extension)
+if(TARGET HBUI)
+    target_link_libraries(${PLUGIN_NAME} PUBLIC HBUI)
 else()
-    message(FATAL_ERROR "imgui-extension not found")
+    message(FATAL_ERROR "HBUI not found")
 endif()
 
 target_include_directories(${PLUGIN_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)

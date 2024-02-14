@@ -2,3 +2,4 @@
 PluginTemplate/cmake-build-debug/
 /build/
 /cmake-build-debug/
+/vendor/glfw/
